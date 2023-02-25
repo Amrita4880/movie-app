@@ -52,7 +52,7 @@ class Header extends Component {
             contactRequired: "dispNone",
             contact: "",
             registrationSuccess: false,
-            loggedIn: sessionStorage.getItem("access_token") == null ? false : true
+            loggedIn: sessionStorage.getItem("access-token") == null ? false : true
         }
         
     }
@@ -329,6 +329,3 @@ class Header extends Component {
 }
 
 export default Header;
-
-
-
