@@ -1,0 +1,2 @@
+header:
+It should rotate infinitely with a complete cycle of 8 seconds, and the speed curve of the animation should be linear.

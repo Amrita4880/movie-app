@@ -1,0 +1,42 @@
+.header {
+    background: #222;
+    height: 36px;
+    padding: 8px, 32px, 8px, 16px
+}
+
+.app-logo {
+    background: #ff7f7f;
+    height: 35px;
+    align-items: left;
+    animation: app-logo-spin infinite 8s linear;
+}
+
+@keyframes app-logo-spin {
+    from { transform: scaleX(-1); }
+}
+
+.login-button {
+    float: right;
+
+}
+
+.bookshow-button {
+   float: right;
+   margin-right: 8px;
+}
+
+.tabs {
+    margin-bottom: 20px;
+}
+
+.red {
+    color: red;
+}
+
+.dispNone {
+    display: none;
+}
+
+.dispBlock {
+    display: block;
+}
