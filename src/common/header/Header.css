@@ -1,7 +1,7 @@
 .header {
     background: #222;
     height: 36px;
-    padding: 8px, 32px, 8px, 16px
+    padding: 8px 32px 8px 16px;
 }
 
 .app-logo {
@@ -17,7 +17,6 @@
 
 .login-button {
     float: right;
-
 }
 
 .bookshow-button {
