@@ -14,7 +14,7 @@ import {
   TextField,
   withStyles,
   Card,
-  Input
+  Input,
 } from "@material-ui/core";
 import React, { Component } from "react";
 import Header from "../../common/header/Header";
@@ -74,7 +74,7 @@ class Home extends Component {
     xhr.addEventListener("readystatechange", function () {
       if (this.readyState === 4) {
         that.setState({
-          upcomingMovies: JSON.parse(this.responseText).movies
+          upcomingMovies: JSON.parse(this.responseText).movies,
         });
       }
     });
@@ -89,7 +89,7 @@ class Home extends Component {
     xhrReleased.addEventListener("readystatechange", function () {
       if (this.readyState === 4) {
         that.setState({
-          releasedMovies: JSON.parse(this.responseText).movies
+          releasedMovies: JSON.parse(this.responseText).movies,
         });
       }
     });
@@ -104,7 +104,7 @@ class Home extends Component {
     xhrGenres.addEventListener("readystatechange", function () {
       if (this.readyState === 4) {
         that.setState({
-          genresList: JSON.parse(this.responseText).genres
+          genresList: JSON.parse(this.responseText).genres,
         });
       }
     });
@@ -119,7 +119,7 @@ class Home extends Component {
     xhrArtists.addEventListener("readystatechange", function () {
       if (this.readyState === 4) {
         that.setState({
-          artistsList: JSON.parse(this.responseText).artists
+          artistsList: JSON.parse(this.responseText).artists,
         });
       }
     });
@@ -129,11 +129,11 @@ class Home extends Component {
     xhrArtists.send(dataArtists);
   }
 
-  movieNameChangeHandler = event => {
+  movieNameChangeHandler = (event) => {
     this.setState({ movieName: event.target.value });
   };
 
-  genreSelectHandler = event => {
+  genreSelectHandler = (event) => {
     this.setState({ genres: event.target.value });
   };
 
@@ -141,15 +141,15 @@ class Home extends Component {
     this.props.history.push("/movie/" + movieId);
   };
 
-  artistSelectHandler = event => {
+  artistSelectHandler = (event) => {
     this.setState({ artists: event.target.value });
   };
 
-  releaseDateStartHandler = event => {
+  releaseDateStartHandler = (event) => {
     this.setState({ releaseDateStart: event.target.value });
   };
 
-  releaseDateEndHandler = event => {
+  releaseDateEndHandler = (event) => {
     this.setState({ releaseDateEnd: event.target.value });
   };
 
@@ -177,7 +177,7 @@ class Home extends Component {
     xhrFilter.addEventListener("readystatechange", function () {
       if (this.readyState === 4) {
         that.setState({
-          releasedMovies: JSON.parse(this.responseText).movies
+          releasedMovies: JSON.parse(this.responseText).movies,
         });
       }
     });
@@ -188,7 +188,7 @@ class Home extends Component {
     );
     xhrFilter.setRequestHeader("Cache-Control", "no-cache");
     xhrFilter.send(dataFilter);
-  }
+  };
 
   render() {
     const { classes } = this.props;
@@ -272,11 +272,11 @@ class Home extends Component {
                   <Select
                     multiple
                     input={<Input id="select-multiple-checkbox-genre" />}
-                    renderValue={selected => selected.join(",")}
+                    renderValue={(selected) => selected.join(",")}
                     value={this.state.genres}
                     onChange={this.genreSelectHandler}
                   >
-                    {this.state.genresList.map(genre => (
+                    {this.state.genresList.map((genre) => (
                       <MenuItem key={genre.id} value={genre.genre}>
                         <Checkbox
                           checked={this.state.genres.indexOf(genre.genre) > -1}
@@ -294,11 +294,11 @@ class Home extends Component {
                   <Select
                     multiple
                     input={<Input id="select-multiple-checkbox" />}
-                    renderValue={selected => selected.join(",")}
+                    renderValue={(selected) => selected.join(",")}
                     value={this.state.artists}
                     onChange={this.artistSelectHandler}
                   >
-                    {this.state.artistsList.map(artist => (
+                    {this.state.artistsList.map((artist) => (
                       <MenuItem
                         key={artist.id}
                         value={artist.first_name + " " + artist.last_name}
