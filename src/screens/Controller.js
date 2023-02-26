@@ -7,7 +7,7 @@ import Confirmation from "../screens/confirmation/Confirmation";
 
 const Controller = () => {
   const baseUrl = "/api/v1/";
-
+  // Code to load various pages of application
   return (
     <Router>
       <div className="main-container">

@@ -50,6 +50,7 @@ class Details extends Component {
     };
   }
 
+  // Get details about movie 
   componentWillMount() {
     let that = this;
     let dataMovie = null;

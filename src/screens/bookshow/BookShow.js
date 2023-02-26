@@ -193,7 +193,9 @@ const BookShow = (props) => {
 
   return (
     <div>
+      // Add the header here
       <Header baseUrl={props.baseUrl} />
+      // most outer container
       <div className="bookShow">
         <Typography className="back">
           <Link to={"/movie/" + props.match.params.id}>

@@ -153,6 +153,7 @@ class Home extends Component {
     this.setState({ releaseDateEnd: event.target.value });
   };
 
+  // Prepare query string
   filterApplyHandler = () => {
     let queryString = "?status=RELEASED";
     if (this.state.movieName !== "") {

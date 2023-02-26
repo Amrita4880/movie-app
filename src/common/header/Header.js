@@ -109,7 +109,7 @@ class Header extends Component {
         sessionStorage.setItem(
           "access-token",
           xhrLogin.getResponseHeader("access-token")
-        );
+        );  //  Setting the access-token in session so that can be used in various pages
 
         that.setState({
           loggedIn: true,
@@ -175,6 +175,7 @@ class Header extends Component {
     xhrSignup.setRequestHeader("Content-Type", "application/json");
     xhrSignup.setRequestHeader("Cache-control", "no-cache");
     xhrSignup.send(dataSignup);
+    //  Make API Call to register the user
   };
 
   inputFirstNameChangeHandler = (e) => {
@@ -198,6 +199,7 @@ class Header extends Component {
   };
 
   logoutHandler = (e) => {
+    // Remove access-token from the browser session storage
     sessionStorage.removeItem("uuid");
     sessionStorage.removeItem("access-token");
 
@@ -247,6 +249,7 @@ class Header extends Component {
             ""
           )}
 
+            {/* // If user logged in then only show the Book Show button   */}
           {this.props.showBookShowButton === "true" && this.state.loggedIn ? (
             <div className="bookshow-button">
               <Link to={"/bookshow/" + this.props.id}>
@@ -266,6 +269,7 @@ class Header extends Component {
           onRequestClose={this.closeModalHandler}
           style={customStyles}
         >
+            {/* // two tabs for login and register */}
           <Tabs
             className="tabs"
             value={this.state.value}
@@ -275,6 +279,7 @@ class Header extends Component {
             <Tab label="Register" />
           </Tabs>
 
+        {/* Login Tab */}
           {this.state.value === 0 && (
             <TabContainer>
               <FormControl required>
@@ -322,6 +327,7 @@ class Header extends Component {
             </TabContainer>
           )}
 
+        {/* Register tab */}
           {this.state.value === 1 && (
             <TabContainer>
               <FormControl required>
